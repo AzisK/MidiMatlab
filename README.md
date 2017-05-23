@@ -2,6 +2,7 @@
 A midi manipulation code written with Matlab. Most of the credit for the code goes to http://kenschutte.com/midi
 
 - Code
+
 Run the example.m. 
 
 Most of the code is explained with comments in the code. 
