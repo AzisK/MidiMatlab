@@ -3,9 +3,20 @@ N = 100;  % num notes
 M = zeros(3*N,6);
 
 midiTime = 0;
+midiNote = round(84*rand(1,1));
 
 for i = 1:N
-    midiNote = 36 + round(48*rand(1,1));
+    if rand(1,1)>0.5
+        midiNote = midiNote + round(10*rand(1,1));
+        if midiNote>84
+            midiNote = midiNote - 15;
+        end
+    else
+        midiNote = midiNote - round(10*rand(1,1));
+        if midiNote<36
+            midiNote = midiNote + 15;
+        end
+    end
     randomTime = 0.2 + rand(1,1);
     if rem(midiNote,12)==0
         M(3*i-1,3) = midiNote + 4;
